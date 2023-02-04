@@ -44,10 +44,10 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="middleName">*Middle name:</label>
-                                      <span th:if="${#fields.hasErrors('studentNumber')}" th:errors="*{studentNumber}"
-                                          class="alert alert-danger"></span>
+                                      <!-- <span th:if="${#fields.hasErrors('studentNumber')}" th:errors="*{studentNumber}"
+                                          class="alert alert-danger"></span> -->
                                           <input id="middleName" name="middleName" type="text" class="form-control"
-                                          th:value="${student.middleName}" autofocus>
+                                          th:value="${student.middleName}" autofocus required>
                                 </div>
                             </div>
                             <div class="col-md-4">

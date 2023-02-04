@@ -19,4 +19,11 @@ public class HomePageController {
     public String displayAboutpage() {
         return "public/home/about";
     }
+    
+    @GetMapping(value = {"/class"})
+    public String displayClasspage() {
+        return "public/home/classRoom";
+    }
+
+
 }

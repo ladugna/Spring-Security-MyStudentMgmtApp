@@ -9,6 +9,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.List;
+
 @Service
 public class StudentServiceImpl implements StudentService {
 
@@ -30,7 +33,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Page<Student> getAllStudentsPaged(int pageNo) {
-        return studentRepository.findAll(PageRequest.of(pageNo,3,Sort.by(Sort.Direction.ASC,"firstName")));
+        return studentRepository.findAll(PageRequest.of(pageNo, 3,Sort.by(Sort.Direction.ASC,"firstName")));
     }
 
     @Override
@@ -48,4 +51,12 @@ public class StudentServiceImpl implements StudentService {
    studentRepository.deleteById(studentId);
 
     }
+
+    @Override
+    public List<Student> searchStudents(String searchString) {
+        return studentRepository.findAllByStudentIdOr_firstName_MiddleName_LastName
+                (searchString,searchString,searchString,searchString);
+    }
+
+
 }

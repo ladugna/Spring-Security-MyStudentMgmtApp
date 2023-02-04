@@ -35,6 +35,11 @@ private StudentService studentService;
                 LocalDate.of(2019,5,24),null,null);
         var saveStudent1=addNewStudent(student1);
         System.out.println(saveStudent1);
+        var student2=new Student(null,"000-61-0003", "LEMESSA",
+                "TAYE", "ADUGNA",3.49,
+                LocalDate.of(2019,6,24),null,null);
+        var saveStudent2=addNewStudent(student2);
+        System.out.println(saveStudent2);
 
        // create new Transcript
         var transcript1= new Transcript(null, "BS Computer Science",null);

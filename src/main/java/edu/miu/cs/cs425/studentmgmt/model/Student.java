@@ -34,7 +34,7 @@ private String middleName;
     @Column(name = "last_Name", nullable = false)
 private String lastName;
     @Column(name = "cgpa", nullable = true)
-private double cgpa;
+private Double cgpa;
 
    @DateTimeFormat(pattern = "yyyy/mm/dd")
 private LocalDate dateOfEnrollment;
@@ -122,11 +122,11 @@ private LocalDate dateOfEnrollment;
         this.lastName = lastName;
     }
 
-    public double getCgpa() {
+    public Double getCgpa() {
         return cgpa;
     }
 
-    public void setCgpa(double cgpa) {
+    public void setCgpa(Double cgpa) {
         this.cgpa = cgpa;
     }
 

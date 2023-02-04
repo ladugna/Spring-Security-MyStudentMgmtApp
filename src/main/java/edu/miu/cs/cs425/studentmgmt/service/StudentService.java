@@ -6,6 +6,9 @@ import edu.miu.cs.cs425.studentmgmt.repository.StudentRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.List;
+
 
 public interface StudentService {
 
@@ -19,4 +22,7 @@ public interface StudentService {
     public abstract Student updateStudent(Student student);
     public abstract void deleteStudentById(Long studentId);
     //public abstract void deletePrimaryAddressOfStudent(Integer publisherId);
+    public List<Student> searchStudents(String searchString);
+
+
 }
