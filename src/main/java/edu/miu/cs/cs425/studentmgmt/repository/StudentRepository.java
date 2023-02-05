@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student,Long> {
-    List<Student> findAllByStudentIdOr_firstName_MiddleName_LastName(  String studentNumber,
+    List<Student> findStudentsByStudentNumberContainingOrFirstNameContainingOrMiddleNameContainingOrLastNameContaining(  String studentNumber,
                                                                             String firstname,
                                                                             String middleName, String lastName);
 

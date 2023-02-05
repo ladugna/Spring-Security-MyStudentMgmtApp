@@ -78,7 +78,7 @@
                                     <label for="dateOfEnrollment">*Date of Enrollement:</label>
                                     <span th:if="${#fields.hasErrors('dateOfEnrollment')}" th:errors="*{dateOfEnrollment}"
                                           class="alert alert-danger"></span>
-                                          <input id="dateOfEnrollment" name="dateOfEnrollment" type="text" class="form-control"
+                                          <input id="dateOfEnrollment" name="dateOfEnrollment" type="date" class="form-control"
                                           th:value="${student.dateOfEnrollment}" autofocus>
                                 </div>
                             </div>

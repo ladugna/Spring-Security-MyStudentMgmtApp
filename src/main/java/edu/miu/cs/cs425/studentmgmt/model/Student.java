@@ -36,7 +36,7 @@ private String lastName;
     @Column(name = "cgpa", nullable = true)
 private Double cgpa;
 
-   @DateTimeFormat(pattern = "yyyy/mm/dd")
+   @DateTimeFormat(pattern = "yyyy-MM-dd")
 private LocalDate dateOfEnrollment;
 
    @ManyToMany

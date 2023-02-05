@@ -95,7 +95,7 @@ private StudentService studentService;
         var students = studentService.searchStudents(searchString);
         modelAndView.addObject("students", students);
         modelAndView.addObject("searchString", searchString);
-        modelAndView.setViewName("secured/sysadmin/student/searchResult");
+        modelAndView.setViewName("secured/student/searchResult");
         return modelAndView;
     }
 

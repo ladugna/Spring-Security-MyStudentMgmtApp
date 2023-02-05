@@ -16,7 +16,7 @@
                     <!--                    <legend>New Publisher Form</legend>-->
                     <div class="container" style="margin-top: 1em;">
                         <div class="row" style="padding-top: .75em;">
-                            <!-- <input type="hidden" name="studentId" th:value="${studentId}" /> -->
+                             <input type="hidden" name="studentId" th:value="${student.studentId}" />
 
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -30,7 +30,6 @@
                         </div>
 
                         <div class="row" style="padding-top: .75em;">
-                            <!-- <input type="hidden" name="studentId" th:value="${studentId}" /> -->
 
                             <div class="col-md-4">
                                 <div class="form-group">
@@ -77,7 +76,7 @@
                                     <label for="dateOfEnrollment">*Date of Enrollement:</label>
                                     <span th:if="${#fields.hasErrors('dateOfEnrollment')}" th:errors="*{dateOfEnrollment}"
                                           class="alert alert-danger"></span>
-                                          <input id="dateOfEnrollment" name="dateOfEnrollment" type="text" class="form-control"
+                                          <input id="dateOfEnrollment" name="dateOfEnrollment" type="date" class="form-control"
                                           th:value="${student.dateOfEnrollment}" autofocus>
                                 </div>
                             </div>
