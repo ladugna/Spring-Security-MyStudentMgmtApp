@@ -30,7 +30,7 @@ private StudentService studentService;
     @Override
     public void run(String... args) throws Exception {
         System.out.println("Hello spring boot, Student Management app started......");
-        //creating student
+       /* //creating student
         var student1=new Student(null,"000-61-0001", "Anna","Lynn", "Smith",3.45,
                 LocalDate.of(2019,5,24),null,null);
         var saveStudent1=addNewStudent(student1);
@@ -50,7 +50,7 @@ private StudentService studentService;
         var classroom1= new Classroom(null,"McLaughlin building", "M105",null);
         var saveClassroom= addNewClassRoom(classroom1);
         System.out.println(saveClassroom);
-
+*/
 
 
         System.out.println("Bye spring boot, Student Management app is completed......");

@@ -9,20 +9,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = {"", "/eregistrar"})
 
 public class HomePageController {
-    @GetMapping(value = {"", "/", "/home"})
+    @GetMapping(value = {"", "/", "/public/home"})
 
     public String displayHomepage() {
-        return "public/home/index";
+        return "index";
     }
 
-    @GetMapping(value = {"/about"})
+    @GetMapping(value = {"/public/about"})
     public String displayAboutpage() {
-        return "public/home/about";
+        return "about";
     }
     
-    @GetMapping(value = {"/class"})
+    @GetMapping(value = {"/public/class"})
     public String displayClasspage() {
-        return "public/home/classRoom";
+        return "classRoom";
+    }
+    @GetMapping(value = {"/public/login"})
+    public String displayLoginPage() {
+        return "login";
     }
 
 

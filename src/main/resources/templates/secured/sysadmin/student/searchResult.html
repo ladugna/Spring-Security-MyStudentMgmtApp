@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="public/fragments/head-elements:: headElements"></head>
 <head>
     <meta charset="UTF-8">
     <title>Student Management System - System Administration - Students</title>
 </head>
 <body>
-  <header th:replace="fragments/header :: header"></header>
+  <div th:replace="public/fragments/header :: header"></div>
   <main>
     <h1>System Administration</h1>
     <nav>
-      <a href="/eregistrar/student/list">Manage Students</a> |
+      <a href="/eregistrar/sysadmin/student/list">Manage Students</a> |
       <a href="#">Manage Books</a> |
       <a href="#">Manage Library Members</a>
     </nav>
     <h2 style="background-color: aqua;">Students search result for '[[${searchString}]]'</h2>
     <section>
-      <form action="/eregistrar/student/search" method="get">
+      <form action="/eregistrar/sysadmin/student/search" method="get">
         <fieldset>
           <legend style="font-weight: bolder;">Search for Student(s)</legend>
           <label>
@@ -23,7 +24,7 @@
           </label>
           <div>
             <input type="search" name="searchString" id="searchString" style="width: 35%; height: 4em;"
-              th:value="${searchString}" placeholder="Enter some text to search for Publisher" 
+              th:value="${searchString}" placeholder="Enter some text to search for Student"
               autofocus>
             <button type="submit" style="height: 4em; width: 7em;">Search</button>
           </div>

@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.time.LocalDate;
 
 @Controller
-@RequestMapping(value = {"/student", "/eregistrar/student"})
+@RequestMapping(value = "/eregistrar/secured/sysadmin/student")
 public class StudentController {
 
 private StudentService studentService;
@@ -28,7 +28,7 @@ private StudentService studentService;
         modelAndView.addObject("students", students);
         modelAndView.addObject("currentPageNo", pageNo);
 //        modelAndView.addObject("publishersCount", ((List)publishers).size());
-        modelAndView.setViewName("secured/student/list");
+        modelAndView.setViewName("secured/sysadmin/student/list");
         return modelAndView;
     }
 
@@ -37,7 +37,7 @@ private StudentService studentService;
     public String displayNewStudentForm(Model model) {
         model.addAttribute("student", new Student(null, null,
                 null,null,null,null,null,null,null));
-        return "secured/student/new";
+        return "secured/sysadmin/student/new";
     }
 
     @PostMapping(value = {"/new"})
@@ -46,11 +46,11 @@ private StudentService studentService;
         if(bindingResult.hasErrors()) {
             model.addAttribute("student", student);
             model.addAttribute("errors", bindingResult.getAllErrors());
-            return "secured/student/new";
+            return "secured/sysadmin/student/new";
         }
 
         studentService.addNewStudent(student);
-        return "redirect:/eregistrar/student/list";
+        return "redirect:/eregistrar/secured/sysadmin/student/list";
     }
 
     @GetMapping(value = {"/edit/{studentId}"})
@@ -58,9 +58,9 @@ private StudentService studentService;
         var student = studentService.getStudentById(studentId);
         if(student != null) {
             model.addAttribute("student", student);
-            return "secured/student/edit";
+            return "secured/sysadmin/student/edit";
         }
-        return "redirect:/eregistrar/student/list";
+        return "redirect:/eregistrar/secured/sysadmin/student/list";
     }
 
     @PostMapping(value = {"/update"})
@@ -69,17 +69,17 @@ private StudentService studentService;
         if(bindingResult.hasErrors()) {
             model.addAttribute("student", student);
             model.addAttribute("errors", bindingResult.getAllErrors());
-            return "secured/student/edit";
+            return "secured/sysadmin/student/edit";
         }
 
         studentService.updateStudent(student);
-        return "redirect:/eregistrar/student/list";
+        return "redirect:/eregistrar/secured/sysadmin/student/list";
     }
 
     @GetMapping(value = {"/delete/{studentId}"})
     public String deleteStudent(@PathVariable Long studentId) {
         studentService.deleteStudentById(studentId);
-        return "redirect:/eregistrar/student/list";
+        return "redirect:/eregistrar/secured/sysadmin/student/list";
     }
 
 //    @GetMapping(value = {"/primaryAddress/delete/{publisherId}"})
@@ -95,7 +95,7 @@ private StudentService studentService;
         var students = studentService.searchStudents(searchString);
         modelAndView.addObject("students", students);
         modelAndView.addObject("searchString", searchString);
-        modelAndView.setViewName("secured/student/searchResult");
+        modelAndView.setViewName("secured/sysadmin/student/searchResult");
         return modelAndView;
     }
 
